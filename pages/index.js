@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '@/lib/UserContext';
+import Head from "next/head";
 
 export default function Home() {
   // Allow this component to access our user state
@@ -7,6 +8,9 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>loading...</title>
+      </Head>
       {/* Check to see if we are in a loading state and display a message if true */}
       {user?.loading && <p>Loading...</p>}
     </div>

@@ -1,36 +1,14 @@
-# Magic Auth with Next.js - Starter Template
+# Magic Auth with Next.js
 
-This is the starter template for the Vercel guide "Add Auth to a Next.js Site with Magic.link" <-- link to be added. For reference, you can find the completed code [here](https://github.com/magiclabs/vercel-magic-guide).
+## Setup of Magic API
 
-## Get Started
-
-1. Install dependencies.
-
-```shell
-npm install
-# or
-yarn install
-```
-
-2. Rename `.env.local.example` to `.env.local` and add your Magic Auth API keys.
-
-```shell
-mv .env.local .env.local
-```
+For the Magic API to work, we need local environment variables of the magic application.<br>
+Those can be set on the system or by including a `.env.local` file and adding the Magic Auth API keys.
 
 ```javascript
-// .env.local
+// .env.local - needed variables
 
-NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY = "YOUR MAGIC AUTH PUBLISHABLE KEY";
-MAGIC_SECRET_KEY = "YOUR MAGIC AUTH SECRET KEY";
+NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY = "MAGIC AUTH PUBLISHABLE KEY"
+MAGIC_SECRET_KEY = "MAGIC AUTH SECRET KEY"
 ```
 
-1. Run the development server.
-
-```shell
-npm run dev
-# or
-yarn dev
-```
-
-4. Open http://localhost:3000 with your browser to see the result.

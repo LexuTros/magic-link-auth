@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { useRouter } from 'next/router';
 import { magic } from '@/lib/magic';
+import Head from 'next/head';
 
 export default function Login() {
   const [user, setUser] = useContext(UserContext);
@@ -36,6 +37,8 @@ export default function Login() {
       // If successful, update our user state with their metadata and route to the dashboard
       if (res.ok) {
         const userMetadata = await magic.user.getMetadata();
+        console.log("User Data:");
+        console.log(userMetadata);
         setUser(userMetadata);
         router.push('/dashboard');
       }
@@ -45,15 +48,20 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <label htmlFor="email">Email</label>
-      <input
-        name="email"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <button type="submit">Send Magic Link</button>
-    </form>
+    <>
+      <Head>
+        <title>Magic Login</title>
+      </Head>
+      <form onSubmit={handleLogin}>
+        <label htmlFor="email">Email</label>
+        <input
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">Send Magic Link</button>
+      </form>
+    </>
   );
 }

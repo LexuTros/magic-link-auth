@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { magic } from '@/lib/magic';
 import { useRouter } from 'next/router';
+import Head from "next/head";
 
 export default function Dashboard() {
   const [user, setUser] = useContext(UserContext);
@@ -20,6 +21,9 @@ export default function Dashboard() {
     <>
       {user?.issuer && (
         <>
+          <Head>
+            <title>Dashboard</title>
+          </Head>
           <h1>Dashboard</h1>
           <h2>Email</h2>
           <p>{user.email}</p>

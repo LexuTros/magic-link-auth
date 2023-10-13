@@ -16,7 +16,11 @@ export default function App({ Component, pageProps }) {
     magic.user.isLoggedIn().then((isLoggedIn) => {
       if (isLoggedIn) {
         // Pull their metadata, update our state, and route to dashboard
-        magic.user.getMetadata().then((userData) => setUser(userData));
+        magic.user.getMetadata().then((userData) => {
+          console.log("User Data:")
+          console.log(userData);
+          setUser(userData);
+        });
         router.push('/dashboard');
       } else {
         // If false, route them to the login page and reset the user state
