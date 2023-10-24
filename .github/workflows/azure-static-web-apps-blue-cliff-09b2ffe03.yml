@@ -33,8 +33,7 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY }}
-          # MAGIC_SECRET_KEY: ${{ secrets.MAGIC_SECRET_KEY }}
+          NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY: pk_live_73DD0BE255A5DAF1
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
